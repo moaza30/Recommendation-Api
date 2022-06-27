@@ -29,9 +29,9 @@ def recommend(title, cosine_sim = cs_books):
 @app.route('/api/recommend/<name>', methods=['GET', 'POST'])
 def bookRecommend(name):
     if request.method == 'GET':
-        x = recommend(str(name))
+        books = recommend(str(name))
 
-    return {"books":x}
+    return {"books": books}, 200
 
 
 if __name__ == '__main__':
